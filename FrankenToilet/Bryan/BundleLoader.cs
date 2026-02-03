@@ -5,6 +5,7 @@ using System.IO;
 using System.Reflection;
 using TMPro;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 using UnityEngine.Video;
 
 /// <summary> Die </summary>
@@ -34,6 +35,9 @@ public static class BundleLoader
     /// <summary> Real doomah trust </summary>
     public static GameObject DoomahReal, Doomah;
 
+    /// <summary> ULTRAKILL projectile prefab. </summary>
+    public static GameObject Projectile;
+
     /// <summary> Load the asset bundle. </summary>
     public static void Load()
     {
@@ -52,6 +56,9 @@ public static class BundleLoader
         MauriceBad = assetBundle.LoadAsset<GameObject>("assets/mauricebad.prefab");
         DoomahReal = assetBundle.LoadAsset<GameObject>("assets/doomahreal.prefab");
         Doomah = assetBundle.LoadAsset<GameObject>("assets/doomah.prefab");
+
+        Addressables.LoadAssetAsync<GameObject>("Assets/Prefabs/Attacks and Projectiles/Projectile.prefab").WaitForCompletion();
+        Projectile = Addressables.LoadAssetAsync<GameObject>("Assets/Prefabs/Attacks and Projectiles/Projectile.prefab").WaitForCompletion();
     }
 
     /// <summary> Grabs the embedded asset bundle. </summary>
