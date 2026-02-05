@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
 
-namespace FrankenToilet.prideunique.Other;
+namespace FrankenToilet.prideunique;
 public static class ImproveHookPoints
 {
     public static void Init()
