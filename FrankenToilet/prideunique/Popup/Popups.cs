@@ -27,7 +27,7 @@ public static class Popups
         if (!AssetsController.AssetsLoaded)
             return;
 
-        if (CameraController.Instance == null)
+        if (!CameraController.Instance)
             return;
 
         PopupCloser.Instance.Awake();
@@ -99,7 +99,7 @@ public static class Popups
 
         videoPlayer.source = VideoSource.VideoClip;
         videoPlayer.clip = videoClip;
-        videoPlayer.SetDirectAudioVolume(0, PrefsManager.Instance.GetFloat("allVolume", 0f) / 2f);
+        videoPlayer.SetDirectAudioVolume(0, PrefsManager.Instance.GetFloat("allVolume", 0f));
 
         videoPlayer.Prepare();
 
